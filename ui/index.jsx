@@ -2,7 +2,9 @@ UI = this.UI = function (type, opt) {
   var u;
   var opt = opt || {};
   if (type !== 'dialog') {
-    #targetengine opt['engine'] || "session"
+    var engine = opt['engine'] || "session";
+// fix indent for [nbqx/es-tar](https://github.com/nbqx/es-tar)
+#targetengine engine
   }
   
   // window
