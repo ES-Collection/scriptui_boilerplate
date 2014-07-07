@@ -141,6 +141,18 @@ UI.prototype.add_radiobutton = function (elm, opt) {
   return radiobutton
 };
 
+// slider
+// add ('radiobutton' [,bounds, value, minvalue, maxvalue, {creation_properties}])
+UI.prototype.add_slider = function (elm, opt) {
+  var u;
+  var opt = opt || {};
+  var slider = elm.add('slider', opt['bounds'] || u, opt['value'] || 0, opt['min'] || 0, opt['max'] || 100, {
+    // creation_properties
+    name: opt['name'],
+  })
+  return slider
+};
+
 // button
 // add ('button' [,bounds, text, {creation_properties}])
 UI.prototype.add_button = function (elm, opt) {

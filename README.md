@@ -24,5 +24,6 @@ see `example.jsx` for more.
 - add_dropdownlist
 - add_checkbox
 - add_radiobutton
+- add_slider
 - add_button
 
