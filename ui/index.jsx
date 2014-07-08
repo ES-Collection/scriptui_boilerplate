@@ -137,20 +137,35 @@ UI.prototype.add_radiobutton = function (elm, opt) {
   var radiobutton = elm.add('checkbox', opt['bounds'] || u, opt['text'] || "", {
     // creation_properties
     name: opt['name'],
-  })
+  });
   return radiobutton
 };
 
 // slider
-// add ('radiobutton' [,bounds, value, minvalue, maxvalue, {creation_properties}])
+// add ('slider' [,bounds, value, minvalue, maxvalue, {creation_properties}])
 UI.prototype.add_slider = function (elm, opt) {
   var u;
   var opt = opt || {};
   var slider = elm.add('slider', opt['bounds'] || u, opt['value'] || 0, opt['min'] || 0, opt['max'] || 100, {
     // creation_properties
     name: opt['name'],
-  })
+  });
   return slider
+};
+
+// scrollbar
+// w.add ('scrollbar' [,bounds, value, minvalue, maxvalue, {creation_properties}])
+UI.prototype.add_scrollbar = function (elm, opt) {
+  var u;
+  var opt = opt || {};
+  var scrollbar = elm.add('scrollbar', opt['bounds'] || u, opt['value'] || 0, opt['min'] || 0, opt['max'] || 100, {
+    // creation_properties
+    stepdelta: opt['stepdelta'], // defalut is 1
+    jumpdelta: opt['jumpdelta'], // default is 20% of the range between minvalue and maxvalue.
+    name: opt['name'],
+  });
+  
+  return scrollbar
 };
 
 // button
@@ -161,6 +176,6 @@ UI.prototype.add_button = function (elm, opt) {
   var button = elm.add('button', opt['bounds'] || u, opt['text'] || "", {
     // creation_properties
     name: opt['name'],
-  })
+  });
   return button
 };
