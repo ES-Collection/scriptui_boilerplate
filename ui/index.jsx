@@ -58,14 +58,21 @@ UI.prototype.add_panel = function (elm, opt) {
 UI.prototype.add_input = function (elm, opt) {
   var u;
   var opt = opt || {};
+  
+  if (opt['readonly'] == u) opt['readonly'] = false;
+  if (opt['noecho'] == u) opt['noecho'] = false;
+  if (opt['multiline'] == u) opt['multiline'] = false;
+  if (opt['scrollable'] == u) opt['scrollable'] = true;
+  if (opt['borderless'] == u) opt['borderless'] = false;
+  
   var input = elm.add('edittext', opt['bounds'] || u, opt['text'] || "", {
     // creation_properties
     name: opt['name'],
-    readonly: (opt['readonly'] == u ? false : true),
-    noecho: (opt['noecho'] == u ? false : true),
-    multiline: (opt['multiline'] == u ? false : true),
-    scrollable:(opt['scrollable'] == u ? true : false),
-    borderless:(opt['borderless'] == u ? false : true),
+    readonly: opt['readonly'],
+    noecho: opt['noecho'],
+    multiline: opt['multiline'],
+    scrollable: opt['scrollable'],
+    borderless: opt['borderless'],
   });
   input.preferredSize = opt['size'] || [120, 90];
   
@@ -76,11 +83,15 @@ UI.prototype.add_input = function (elm, opt) {
 UI.prototype.add_text = function (elm, opt) {
   var u;
   var opt = opt || {};
+  
+  if (opt['multiline'] == u) opt['multiline'] = false;
+  if (opt['scrolling'] == u) opt['scrolling'] = false;
+  
   var text = elm.add('statictext', opt['bounds'] || u, opt['text'] || "", {
     // creation_properties
     name: opt['name'],
-    multiline: (opt['multiline'] == u ? false : true),
-    scrolling: (opt['scrolling'] == u ? false : true),
+    multiline: opt['multiline'],
+    scrolling: opt['scrolling'],
     // TODO statictext's creation_properties
     // truncate: ,
   });
@@ -92,15 +103,17 @@ UI.prototype.add_text = function (elm, opt) {
 UI.prototype.add_listbox = function (elm, opt) {
   var u;
   var opt = opt || {};
+
+  if (opt['showHeaders'] == u) opt['showHeaders'] = false;
+
   var listbox = elm.add('listbox', opt['bounds'] || u, opt['items'] || [], {
     // creation_properties
     name: opt['name'],
     multiselect: opt['multiselect'],
-    // TODO listbox's creation_properties
-    // numberOfColumns: ,
-    // showHeaders: ,
-    // columnWidths: ,
-    // columnTitles: ,
+    numberOfColumns: opt['numberOfColumns'],
+    showHeaders: opt['showHeaders'],
+    columnWidths: opt['columnWidths'],
+    columnTitles: opt['columnTitles'],
   });
   listbox.preferredSize = opt['size'] || [120, 90];
   return listbox
