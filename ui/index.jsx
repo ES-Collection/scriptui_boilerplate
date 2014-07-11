@@ -61,6 +61,7 @@ UI.prototype.add_input = function (elm, opt) {
   
   if (opt['readonly'] == u) opt['readonly'] = false;
   if (opt['noecho'] == u) opt['noecho'] = false;
+  if (opt['enterKeySignalsOnChange'] == u) opt['enterKeySignalsOnChange'] = false;
   if (opt['multiline'] == u) opt['multiline'] = false;
   if (opt['scrollable'] == u) opt['scrollable'] = true;
   if (opt['borderless'] == u) opt['borderless'] = false;
@@ -70,6 +71,7 @@ UI.prototype.add_input = function (elm, opt) {
     name: opt['name'],
     readonly: opt['readonly'],
     noecho: opt['noecho'],
+    enterKeySignalsOnChange: opt['enterKeySignalsOnChange']
     multiline: opt['multiline'],
     scrollable: opt['scrollable'],
     borderless: opt['borderless'],
