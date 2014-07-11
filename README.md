@@ -11,7 +11,7 @@ ui.add_text(win, {text: "hello", name:"poo"});
 win.show();
 ~~~
 
-see `example.jsx` for more.
+see `ui/example.jsx` for more.
 
 
 ## available instance methods
@@ -28,3 +28,11 @@ see `example.jsx` for more.
 - add_scrollbar
 - add_button
 
+optional methods with 'ui/ui-graphics/index.jsx'
+
+
+- def_bgcolor
+- def_fgcolor
+- def_font
+
+see `ui/ui-graphics/example.jsx` for example.
