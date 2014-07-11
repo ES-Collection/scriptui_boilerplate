@@ -71,7 +71,7 @@ UI.prototype.add_input = function (elm, opt) {
     name: opt['name'],
     readonly: opt['readonly'],
     noecho: opt['noecho'],
-    enterKeySignalsOnChange: opt['enterKeySignalsOnChange']
+    enterKeySignalsOnChange: opt['enterKeySignalsOnChange'],
     multiline: opt['multiline'],
     scrollable: opt['scrollable'],
     borderless: opt['borderless'],
