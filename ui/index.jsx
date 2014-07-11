@@ -7,6 +7,36 @@ UI = this.UI = function (type, opt) {
 #targetengine engine
   }
   
+  // solid color
+  UI.solid_color = function (val) {
+    var color;
+    switch(val) {
+      case "red": 
+        color = [1, 0, 0]; break;
+      case "green": 
+        color = [0, 1, 0]; break;
+      case "blue": 
+        color = [0, 0, 1]; break;
+      case "white": 
+        color = [1, 1, 1]; break;
+      case "black": 
+        color = [0, 0, 0]; break;
+      case "gray": 
+      case "grey": 
+        color = [0.5, 0.5, 0.5]; break;
+      case "yellow": 
+        color = [1, 1, 0]; break;
+      case "cyan": 
+        color = [0, 1, 1]; break;
+      case "magenta": 
+        color = [1, 0, 1]; break;
+      default: 
+        color = val; break;
+    }
+    return color
+  };
+  
+  
   // window
   this.win = new Window(type, opt['title'] || "", opt['bounds'] || u, {
     closeButton: (opt['closeButton'] == u ? true : opt['closeButton']),
