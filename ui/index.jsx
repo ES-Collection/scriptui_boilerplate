@@ -126,8 +126,7 @@ UI.prototype.add_text = function (elm, opt) {
     name: opt['name'],
     multiline: opt['multiline'],
     scrolling: opt['scrolling'],
-    // TODO statictext's creation_properties
-    // truncate: ,
+    truncate: opt['trancate'] || 'none', //middle or end, none
   });
   text.characters = opt['characters'] || text.text.length;
   return text
