@@ -65,6 +65,7 @@ UI.prototype.add_group = function (elm, opt) {
   group.margins = opt['margins'] || this.win.margins;
   group.spacing = opt['spacing'] || this.win.spacing;
   group.alignChildren = opt['alignChildren'] || this.win.alignChildren;
+  group.preferredSize = opt['size'];
   return group
 };
 
@@ -81,6 +82,7 @@ UI.prototype.add_panel = function (elm, opt) {
   panel.margins = opt['margins'] || this.win.margins;
   panel.spacing = opt['spacing'] || this.win.spacing;
   panel.alignChildren = opt['alignChildren'] || this.win.alignChildren;
+  panel.preferredSize = opt['size'];
   return panel
 };
 
