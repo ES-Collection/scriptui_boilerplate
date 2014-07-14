@@ -82,7 +82,9 @@ UI.prototype.add_panel = function (elm, opt) {
   panel.margins = opt['margins'] || this.win.margins;
   panel.spacing = opt['spacing'] || this.win.spacing;
   panel.alignChildren = opt['alignChildren'] || this.win.alignChildren;
-  panel.preferredSize = opt['size'];
+  if (opt['size']) {
+    panel.preferredSize = opt['size'];
+  }
   return panel
 };
 
@@ -108,8 +110,9 @@ UI.prototype.add_input = function (elm, opt) {
     scrollable: opt['scrollable'],
     borderless: opt['borderless'],
   });
-  input.preferredSize = opt['size'] || [120, 90];
-  
+  if (opt['size']) {
+    input.preferredSize = opt['size'];
+  }
   return input
 };
 
@@ -148,7 +151,9 @@ UI.prototype.add_listbox = function (elm, opt) {
     columnWidths: opt['columnWidths'],
     columnTitles: opt['columnTitles'],
   });
-  listbox.preferredSize = opt['size'] || [120, 90];
+  if (opt['size']) {
+    listbox.preferredSize = opt['size'];
+  }
   return listbox
 };
 
@@ -161,6 +166,9 @@ UI.prototype.add_dropdownlist = function (elm, opt) {
     name: opt['name'],
   });
   dropdownlist.title = opt['title'] || "";
+  if (opt['size']) {
+    dropdownlist.preferredSize = opt['size'];
+  }
   return dropdownlist
 };
 
@@ -196,6 +204,9 @@ UI.prototype.add_slider = function (elm, opt) {
     // creation_properties
     name: opt['name'],
   });
+  if (opt['size']) {
+    slider.preferredSize = opt['size'];
+  }
   return slider
 };
 
@@ -210,7 +221,9 @@ UI.prototype.add_scrollbar = function (elm, opt) {
     jumpdelta: opt['jumpdelta'], // default is 20% of the range between minvalue and maxvalue.
     name: opt['name'],
   });
-  
+  if (opt['size']) {
+    scrollbar.preferredSize = opt['size'];
+  }
   return scrollbar
 };
 
@@ -223,5 +236,8 @@ UI.prototype.add_button = function (elm, opt) {
     // creation_properties
     name: opt['name'],
   });
+  if (opt['size']) {
+    button.preferredSize = opt['size'];
+  }
   return button
 };
