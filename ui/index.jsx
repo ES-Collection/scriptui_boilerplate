@@ -188,7 +188,7 @@ UI.prototype.add_checkbox = function (elm, opt) {
 UI.prototype.add_radiobutton = function (elm, opt) {
   var u;
   var opt = opt || {};
-  var radiobutton = elm.add('checkbox', opt['bounds'] || u, opt['text'] || "", {
+  var radiobutton = elm.add('radiobutton', opt['bounds'] || u, opt['text'] || "", {
     // creation_properties
     name: opt['name'],
   });
