@@ -134,6 +134,9 @@ UI.prototype.add_text = function (elm, opt) {
     truncate: opt['trancate'] || 'none', //middle or end, none
   });
   text.characters = opt['characters'] || text.text.length;
+  if (opt['size']) {
+    text.preferredSize = opt['size'];
+  }
   return text
 };
 
