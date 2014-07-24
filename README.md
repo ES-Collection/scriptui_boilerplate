@@ -28,8 +28,16 @@ see `ui/example.jsx` for more.
 - add_scrollbar
 - add_button
 
-optional methods with 'ui/ui-graphics/index.jsx'
+optional methods with 'ui/ui-progressbar/index.jsx'
 
+- add_progressbar
+
+
+see `ui/ui-progress/example.jsx` and `ui/ui-progress/example-simple-progressbar.jsx` for example.
+
+---
+
+optional methods with 'ui/ui-graphics/index.jsx'
 
 - def_bgcolor
 - def_fgcolor
