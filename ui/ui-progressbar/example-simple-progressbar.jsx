@@ -1,4 +1,5 @@
 #target "indesign"
+#targetengine "simple.progress.bar"
 #include "../../ui/index.jsx"
 #include "./index.jsx"
 
@@ -11,7 +12,7 @@ var contents = [
   "Excepteur sint occaecat cupidatat non proident, ",
   "sunt in culpa qui officia deserunt mollit anim id est laborum."].join("");
 
-progress = new SimpleProgress({size: [230,2], engine:"progress.bar", end:contents.length});
+var progress = new SimpleProgress({size: [230,2], end:contents.length});
 for (var i=0, len=contents.length; i < len ; i++) {
   progress.bar.value = i * progress.unit;
   progress.win.update();

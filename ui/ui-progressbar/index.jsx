@@ -2,7 +2,7 @@ SimpleProgress = this.SimpleProgress = function  (opt) {
   var u;
   var opt = opt || {};
 
-  var w = new UI("window", {engine: opt['engine'], minimizeButton:false});
+  var w = new UI("window", {minimizeButton:false});
   this.win = w.win;
   this.bar = this.win.add('progressbar', u, 0, 100);
   if (opt['size']) {

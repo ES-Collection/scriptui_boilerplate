@@ -1,9 +1,10 @@
 #target "indesign"
+#targetengine "progress.bar"
 #include "../../ui/index.jsx"
 #include "./index.jsx"
 
 var contents = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-var pb = new UI("window", {title:"Progress...", engine:"4C07B33-D1AF-479D-A213-5ABC96E5A03B"});
+var pb = new UI("window", {title:"Progress...");
 var progress = pb.win;
 
 pb.add_progressbar(progress, {name:'bar'});
