@@ -96,6 +96,7 @@ UI.prototype.add_input = function (elm, opt) {
   if (opt['multiline'] == u) opt['multiline'] = false;
   if (opt['scrollable'] == u) opt['scrollable'] = true;
   if (opt['borderless'] == u) opt['borderless'] = false;
+  if (opt['enabled'] == u) opt['enabled'] = true;
   
   var input = elm.add('edittext', opt['bounds'] || u, opt['text'] || "", {
     // creation_properties
@@ -110,6 +111,7 @@ UI.prototype.add_input = function (elm, opt) {
   if (opt['size']) {
     input.preferredSize = opt['size'];
   }
+  input.enabled = opt['enabled'];
   return input
 };
 
@@ -141,6 +143,7 @@ UI.prototype.add_listbox = function (elm, opt) {
   var opt = opt || {};
 
   if (opt['showHeaders'] == u) opt['showHeaders'] = false;
+  if (opt['enabled'] == u) opt['enabled'] = true;
 
   var listbox = elm.add('listbox', opt['bounds'] || u, opt['items'] || [], {
     // creation_properties
@@ -154,6 +157,7 @@ UI.prototype.add_listbox = function (elm, opt) {
   if (opt['size']) {
     listbox.preferredSize = opt['size'];
   }
+  listbox.enabled = opt['enabled'];
   return listbox
 };
 
@@ -161,6 +165,9 @@ UI.prototype.add_listbox = function (elm, opt) {
 UI.prototype.add_dropdownlist = function (elm, opt) {
   var u;
   var opt = opt || {};
+
+  if (opt['enabled'] == u) opt['enabled'] = true;
+
   var dropdownlist = elm.add('dropdownlist', opt['bounds'] || u, opt['items'] || u, {
     // creation_properties
     name: opt['name'],
@@ -169,6 +176,7 @@ UI.prototype.add_dropdownlist = function (elm, opt) {
   if (opt['size']) {
     dropdownlist.preferredSize = opt['size'];
   }
+  dropdownlist.enabled = opt['enabled'];
   return dropdownlist
 };
 
@@ -176,10 +184,14 @@ UI.prototype.add_dropdownlist = function (elm, opt) {
 UI.prototype.add_checkbox = function (elm, opt) {
   var u;
   var opt = opt || {};
+
+  if (opt['enabled'] == u) opt['enabled'] = true;
+
   var checkbox = elm.add('checkbox', opt['bounds'] || u, opt['text'] || "", {
     // creation_properties
     name: opt['name'],
   });
+  checkbox.enabled = opt['enabled'];
   return checkbox
 };
 
@@ -188,10 +200,14 @@ UI.prototype.add_checkbox = function (elm, opt) {
 UI.prototype.add_radiobutton = function (elm, opt) {
   var u;
   var opt = opt || {};
+
+  if (opt['enabled'] == u) opt['enabled'] = true;
+
   var radiobutton = elm.add('radiobutton', opt['bounds'] || u, opt['text'] || "", {
     // creation_properties
     name: opt['name'],
   });
+  radiobutton.enabled = opt['enabled'];
   return radiobutton
 };
 
@@ -200,6 +216,9 @@ UI.prototype.add_radiobutton = function (elm, opt) {
 UI.prototype.add_slider = function (elm, opt) {
   var u;
   var opt = opt || {};
+  
+  if (opt['enabled'] == u) opt['enabled'] = true;
+  
   var slider = elm.add('slider', opt['bounds'] || u, opt['value'] || 0, opt['min'] || 0, opt['max'] || 100, {
     // creation_properties
     name: opt['name'],
@@ -207,6 +226,7 @@ UI.prototype.add_slider = function (elm, opt) {
   if (opt['size']) {
     slider.preferredSize = opt['size'];
   }
+  slider.enabled = opt['enabled'];
   return slider
 };
 
@@ -215,6 +235,9 @@ UI.prototype.add_slider = function (elm, opt) {
 UI.prototype.add_scrollbar = function (elm, opt) {
   var u;
   var opt = opt || {};
+  
+  if (opt['enabled'] == u) opt['enabled'] = true;
+  
   var scrollbar = elm.add('scrollbar', opt['bounds'] || u, opt['value'] || 0, opt['min'] || 0, opt['max'] || 100, {
     // creation_properties
     stepdelta: opt['stepdelta'], // defalut is 1
@@ -224,6 +247,7 @@ UI.prototype.add_scrollbar = function (elm, opt) {
   if (opt['size']) {
     scrollbar.preferredSize = opt['size'];
   }
+  scrollbar.enabled = opt['enabled'];
   return scrollbar
 };
 
@@ -232,6 +256,9 @@ UI.prototype.add_scrollbar = function (elm, opt) {
 UI.prototype.add_button = function (elm, opt) {
   var u;
   var opt = opt || {};
+  
+  if (opt['enabled'] == u) opt['enabled'] = true;
+  
   var button = elm.add('button', opt['bounds'] || u, opt['text'] || "", {
     // creation_properties
     name: opt['name'],
@@ -239,5 +266,6 @@ UI.prototype.add_button = function (elm, opt) {
   if (opt['size']) {
     button.preferredSize = opt['size'];
   }
+  button.enabled = opt['enabled'];
   return button
 };

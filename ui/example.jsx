@@ -8,10 +8,11 @@ var win = ui.win;
 
 win.margins = 10;
 ui.add_text(win, {text:"hello"});
-ui.add_panel(win)
-ui.add_input(win, {text:"HELLO\nWORD", multiline:true, noecho:false, name:"pooo"});
+ui.add_panel(win);
+ui.add_input(win, {text:"HELLO\nWORD", multiline:true, noecho:false, name:"pooo", enabled:false});
+ui.add_button(win, {text:"HELLO WORLD", name:"ok", enabled:true});
 
-win['pooo'].onClick = function () {
+win['ok'].onClick = function () {
   alert(this.text); //=> "HELLO\nWORD"
 }
 
