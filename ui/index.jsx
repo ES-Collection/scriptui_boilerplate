@@ -90,23 +90,18 @@ UI.prototype.add_input = function (elm, opt) {
   var u;
   var opt = opt || {};
   
-  if (opt['readonly'] == u) opt['readonly'] = false;
-  if (opt['noecho'] == u) opt['noecho'] = false;
-  if (opt['enterKeySignalsOnChange'] == u) opt['enterKeySignalsOnChange'] = false;
-  if (opt['multiline'] == u) opt['multiline'] = false;
   if (opt['scrollable'] == u) opt['scrollable'] = true;
-  if (opt['borderless'] == u) opt['borderless'] = false;
   if (opt['enabled'] == u) opt['enabled'] = true;
   
   var input = elm.add('edittext', opt['bounds'] || u, opt['text'] || "", {
     // creation_properties
     name: opt['name'],
-    readonly: opt['readonly'],
-    noecho: opt['noecho'],
-    enterKeySignalsOnChange: opt['enterKeySignalsOnChange'],
-    multiline: opt['multiline'],
+    readonly: !!opt['readonly'],
+    noecho: !!opt['noecho'],
+    enterKeySignalsOnChange: !!opt['enterKeySignalsOnChange'],
+    multiline: !!opt['multiline'],
     scrollable: opt['scrollable'],
-    borderless: opt['borderless'],
+    borderless: !!opt['borderless'],
   });
   if (opt['size']) {
     input.preferredSize = opt['size'];
@@ -120,14 +115,11 @@ UI.prototype.add_text = function (elm, opt) {
   var u;
   var opt = opt || {};
   
-  if (opt['multiline'] == u) opt['multiline'] = false;
-  if (opt['scrolling'] == u) opt['scrolling'] = false;
-  
   var text = elm.add('statictext', opt['bounds'] || u, opt['text'] || "", {
     // creation_properties
     name: opt['name'],
-    multiline: opt['multiline'],
-    scrolling: opt['scrolling'],
+    multiline: !!opt['multiline'],
+    scrolling: !!opt['scrolling'],
     truncate: opt['trancate'] || 'none', //middle or end, none
   });
   text.characters = opt['characters'] || text.text.length;
@@ -142,7 +134,6 @@ UI.prototype.add_listbox = function (elm, opt) {
   var u;
   var opt = opt || {};
 
-  if (opt['showHeaders'] == u) opt['showHeaders'] = false;
   if (opt['enabled'] == u) opt['enabled'] = true;
 
   var listbox = elm.add('listbox', opt['bounds'] || u, opt['items'] || [], {
@@ -150,7 +141,7 @@ UI.prototype.add_listbox = function (elm, opt) {
     name: opt['name'],
     multiselect: opt['multiselect'],
     numberOfColumns: opt['numberOfColumns'],
-    showHeaders: opt['showHeaders'],
+    showHeaders: !!opt['showHeaders'],
     columnWidths: opt['columnWidths'],
     columnTitles: opt['columnTitles'],
   });
