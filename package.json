@@ -1,0 +1,28 @@
+{
+  "name": "scriptui_boilerplate",
+  "version": "0.0.0",
+  "description": "scriptui boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape */**/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/milligramme/scriptui_boilerplate.git"
+  },
+  "keywords": [
+    "scriptui",
+    "extendscript",
+    "jsx"
+  ],
+  "author": "milligramme",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/milligramme/scriptui_boilerplate/issues"
+  },
+  "homepage": "https://github.com/milligramme/scriptui_boilerplate",
+  "devDependencies": {
+    "estktap": "0.0.1",
+    "tape": "^2.14.0"
+  }
+}

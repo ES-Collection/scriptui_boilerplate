@@ -44,3 +44,10 @@ optional methods with 'ui/ui-graphics/index.jsx'
 - def_font
 
 see `ui/ui-graphics/example.jsx` for example.
+
+## test
+
+~~~
+$ npm install
+$ npm test
+~~~
