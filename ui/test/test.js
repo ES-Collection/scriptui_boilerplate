@@ -37,6 +37,10 @@ test('scriptui-test',function(t){
     t.true(d, 'should be true');
   });
 
+  estktap('input foreground background test', path.join(__dirname, '/graphics/set-input-bgfg.jsx'), function (d) {
+    t.true(d, 'should be true');
+  });
+
   t.end();
 });
 
