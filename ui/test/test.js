@@ -31,6 +31,12 @@ test('scriptui-test',function(t){
     t.true(d, 'should be true');
   });
 
+
+  // UI Graphics Test
+  estktap('uifont test', path.join(__dirname, '/graphics/set-font-test.jsx'), function (d) {
+    t.true(d, 'should be true');
+  });
+
   t.end();
 });
 
