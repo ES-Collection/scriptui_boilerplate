@@ -1,6 +1,6 @@
 {
   "name": "scriptui_boilerplate",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "scriptui boilerplate",
   "main": "index.js",
   "scripts": {
